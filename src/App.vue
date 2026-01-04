@@ -183,3 +183,77 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped>
+.console-container {
+  min-height: 100vh;
+  background-color: #111; /* 全局深色背景 */
+  padding: 20px 0;
+}
+
+.status-bar {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  color: #00ffdd;
+  font-size: 16px;
+}
+
+.result-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #222;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  min-width: 400px;
+}
+
+.modal-content h3 {
+  color: #00ffdd;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#esa-knowledge {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00ffdd;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #00e0c8;
+}
+</style>

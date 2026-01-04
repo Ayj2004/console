@@ -32,13 +32,10 @@ const emit = defineEmits([]);
   max-width: 800px; /* 最大宽度 */
   margin: 20px auto; /* 居中 + 上下间距 */
   padding: 30px; /* 增加内边距 */
-  /* 背景图设置 */
-  background-image: url("@/assets/bp.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* 移除背景图相关样式 */
   border-radius: 8px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* 保留深色背景保证可读性 */
 }
 
 .command-display h2 {

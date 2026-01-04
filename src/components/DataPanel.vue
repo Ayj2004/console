@@ -121,12 +121,9 @@ onMounted(() => {
   margin: 0 auto; /* 居中显示 */
   padding: 20px;
   min-height: 600px; /* 最小高度，避免界面过小 */
-  /* 背景图设置 - 请替换为你的背景图路径 */
-  background-image: url("@/assets/bp.png");
-  background-size: cover; /* 覆盖整个容器 */
-  background-position: center; /* 居中显示 */
-  background-repeat: no-repeat; /* 不重复 */
+  /* 移除背景图相关样式 */
   border-radius: 8px; /* 圆角优化 */
+  background-color: rgba(0, 0, 0, 0.7); /* 保留深色背景保证可读性 */
 }
 
 .chart-item {

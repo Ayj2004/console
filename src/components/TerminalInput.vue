@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, defineExpose } from "vue";
 
 // 接收父组件参数
 const props = defineProps({
@@ -64,7 +64,7 @@ const handleSubmit = () => {
   isInputError.value = true;
 };
 
-// 新增：暴露clearInput方法给父组件
+// 暴露clearInput方法给父组件
 defineExpose({
   clearInput,
 });
@@ -76,15 +76,12 @@ defineExpose({
   max-width: 800px; /* 最大宽度 */
   margin: 20px auto; /* 居中 + 上下间距 */
   padding: 30px; /* 增加内边距，放大界面 */
-  /* 背景图设置 */
-  background-image: url("@/assets/bp.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* 移除背景图相关样式 */
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 15px; /* 元素间距 */
+  background-color: rgba(0, 0, 0, 0.7); /* 保留深色背景保证可读性 */
 }
 
 .terminal-input label {
