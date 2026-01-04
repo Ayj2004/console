@@ -33,7 +33,7 @@ const emit = defineEmits([]);
   margin: 20px auto; /* 居中 + 上下间距 */
   padding: 30px; /* 增加内边距 */
   /* 背景图设置 */
-  background-image: url("@/assets/bg.png");
+  background-image: url("@/assets/bp.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
