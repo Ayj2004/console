@@ -36,6 +36,12 @@ const emit = defineEmits(["start-game", "submit-input"]);
 const userInput = ref("");
 const isInputError = ref(false);
 
+// 新增：清空输入框的方法
+const clearInput = () => {
+  userInput.value = "";
+  isInputError.value = false; // 同时清除错误状态
+};
+
 // 监听输入错误状态，输入变化时清除错误
 watch(userInput, () => {
   if (isInputError.value) {
@@ -57,6 +63,11 @@ const handleSubmit = () => {
   // 标记错误（父组件会通过校验结果更新）
   isInputError.value = true;
 };
+
+// 新增：暴露clearInput方法给父组件
+defineExpose({
+  clearInput,
+});
 </script>
 
 <style scoped>

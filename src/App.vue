@@ -13,8 +13,9 @@
       :countdown="countdown"
     />
 
-    <!-- 终端输入组件 -->
+    <!-- 终端输入组件：新增ref引用 -->
     <TerminalInput
+      ref="terminalInputRef"
       :is-game-started="isGameStarted"
       @start-game="startGame"
       @submit-input="submitInput"
@@ -57,6 +58,9 @@ import {
   getChartData,
   getHighScore,
 } from "./utils/edgeStorage";
+
+// 新增：获取TerminalInput组件实例
+const terminalInputRef = ref(null);
 
 // 响应式数据
 const isGameStarted = ref(false); // 游戏是否开始
@@ -148,13 +152,15 @@ const handleResult = (correct) => {
   showResultModal.value = true;
 };
 
-// 重新开始游戏
+// 重新开始游戏：新增清空输入框逻辑
 const restartGame = () => {
   showResultModal.value = false;
+  // 调用子组件的清空方法
+  terminalInputRef.value?.clearInput();
   startGame();
 };
 
-// 新增：结束游戏
+// 结束游戏：新增清空输入框逻辑
 const endGame = () => {
   // 重置所有游戏状态
   showResultModal.value = false;
@@ -163,13 +169,12 @@ const endGame = () => {
   countdown.value = 10;
   currentCommand.code = "";
   currentCommand.desc = "";
+  // 调用子组件的清空方法
+  terminalInputRef.value?.clearInput();
   // 可根据需求是否清空图表数据
   // accuracyList.value = [];
   // speedList.value = [];
 };
-
-// 移除：分享记录功能
-// const shareRecord = () => { ... }
 
 // 页面卸载时清除定时器
 onMounted(() => {
